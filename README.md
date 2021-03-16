@@ -25,7 +25,7 @@ Let’s assume that my AI is called A and the opponent AI is called B. The game 
 This scenario is a lot to read and take in, but the whole process probably takes about 5 seconds.  The game records the number of hits, misses, total shots, and ships remaining for the user and opponent. In the GUI window, your ships are on the left, while your opponent’s grid is on the right. The ships are randomly generated every round. 
 
 # Battleship Guessing Algorithm
-The guessing algorithm for this AI is pretty basic. It randomly chooses a point on the grid at the beginning of the round, and guesses at every other spot on the grid, moving down. If it reaches the bottom of the grid, it starts back at the top, and continues with every other spot.
+The guessing algorithm for this AI is pretty basic. It randomly chooses a point on the grid at the beginning of the round, and guesses at every other spot on the grid, moving horizontally. Once it finishes a row, it moves down to the next row. If it reaches the bottom of the grid, it starts back at the top, and continues with every other spot horizontally.
 
 # Ships
  - AIRCRAFT CARRIER: 5

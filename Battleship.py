@@ -1,10 +1,3 @@
-#########################################
-# File Name: Battleship.py
-# Description: Game of Battleship 
-# Authors: Kathleen and Daniel
-# Date: 25/11/2019
-#########################################
-
 from random import randint
 import random
 import copy
@@ -12,7 +5,7 @@ import pygame
 
 pygame.init()
 
-def chooseCoordinate(l, myShip, shipNum): #Kathleen
+def chooseCoordinate(l, myShip, shipNum): 
     SC = []
     duplicateShip = copy.deepcopy(myShip)
     x = random.randint(0,9)
@@ -81,12 +74,12 @@ def chooseCoordinate(l, myShip, shipNum): #Kathleen
     SC.sort()
     return myShip, SC
 
-def PlotShip():#kathleen
+def PlotShip():
     myShip = []
     shipList = []
-    SC = [] 
     for i in range(10):
         myShip.append([int(0)]*10)
+        
     myShip, SC = chooseCoordinate(5, myShip, 1)
     shipList.append(SC)
     myShip, SC = chooseCoordinate(4, myShip, 2)
@@ -99,7 +92,7 @@ def PlotShip():#kathleen
     shipList.append(SC)
     return myShip, shipList
 
-def printShip(shipList):#Kathleen
+def printShip(shipList):
     for i in range(5):
         SC = shipList[i]
         if(SC[0][0] == SC[1][0]):
@@ -108,7 +101,7 @@ def printShip(shipList):#Kathleen
         else:
             pygame.draw.ellipse(gameWindow, shipGray, (50 + int(SC[0][1]) * 50, 200 + 50 * (ord(SC[0][0]) - 65), 45, 48 * len(SC)))
 
-def shipName(z): #Kathleen
+def shipName(z): 
     ship = ""
     if(z == 1):
         ship ="AIRCRAFT CARRIER"
@@ -122,14 +115,14 @@ def shipName(z): #Kathleen
         ship = "DESTROYER"
     return ship
 
-def ifIn(myShip, z): #Kathleen
+def ifIn(myShip, z): 
     for i in range(10):
         for j in range(10):
             if(myShip[i][j] == z):
                 return True
     return False
 
-def Attack(myShip):#Kathleen
+def Attack(myShip):
     attack = input()
     if(len(attack) == 2 or len(attack) == 3):
         l = list(attack)
@@ -153,7 +146,7 @@ def Attack(myShip):#Kathleen
     xy = [x,y]
     return xy
 
-def sweepStrikeZone(coordinates):#Daniel
+def sweepStrikeZone(coordinates):
     coords = [] 
     letter = coordinates[0]
     if len(coordinates) == 2:
@@ -217,12 +210,12 @@ def sweepStrikeZone(coordinates):#Daniel
                 coords.append(coordinateLetterLeft + str(coordinateNumberLeft))
     return coords
 
-def untilSunk(shotList, p1, p2, directionG, bowlean, ifSunk, hitO, missO): #Kathleen and Daniel 
+def untilSunk(shotList, p1, p2, directionG, bowlean, ifSunk, hitO, missO): 
     reach = True 
     if (directionG==1):
         letter = p1[0]
         if(int(p2[1:]) == 10):
-           bowlean = False
+            bowlean = False
         if(int(p2[1:]) < int(p1[1:]) and bowlean):
             p3 = p2
             p2 = p1
@@ -307,7 +300,7 @@ def untilSunk(shotList, p1, p2, directionG, bowlean, ifSunk, hitO, missO): #Kath
             pygame.mixer.music.play()
     return shotList, bowlean, ifSunk, hitO, missO, status, reach
 
-def printPoint(point, status, l):#Kathleen
+def printPoint(point, status, l):
     letter = ord(point[0]) - 65
     number = int(point[1:]) - 1
     if(l== 1):
@@ -372,7 +365,7 @@ userWon = titleFont.render("USER HAS WON!", 1, white)
 userLost = font.render("USER HAS LOST", 1, red)
 opponentWon = titleFont.render("OPPONENT HAS WON!", 1, white)
 opponentLost = font.render("OPPONENT HAS LOST", 1, red)
-#Daniel
+
 gameWindow.fill(navyBlue)
 for squareLeftVertical in range(200, 700, 50):
     for squareLeftHorizontal in range(50, 550, 50):
@@ -428,8 +421,8 @@ gameWindow.blit(shipCounterOpponent, (20, 750))
 gameWindow.blit(shotCounterOpponent, (300, 750))
 
 pygame.display.update()
-#######################################
-#Kathleen
+
+
 print("Who is going first: OPPONENT or USER?")
 nameShip = ""
 otherPoint = ""
@@ -462,7 +455,7 @@ while True:
             printPoint(chr(x+65)+str(y+1), "HIT", 2)
                        
         shotsU += 1
-        #Daniel
+        
         pygame.draw.rect(gameWindow, navyBlue, (625, 700, 700, 100), 0)
         hitCounterUser = infoFont.render("HITS BY OPPONENT: " + str(hitU), 1, red)
         missCounterUser = infoFont.render("MISSES BY OPPONENT: " + str(missU), 1, white)
@@ -475,7 +468,7 @@ while True:
        
         pygame.display.update()
         pygame.event.get()
-        ###########################
+        
         break
     
     elif(first!= "USER"):
@@ -483,10 +476,10 @@ while True:
         first = input()
     else:
         break
-###############################
+
 while(inPlay):
     pygame.event.get()
-    #Kathleen
+    
     shotsO += 1
     if(not otherPoint == "" and shipOther):
         coords = sweepStrikeZone(otherPoint)
@@ -522,8 +515,8 @@ while(inPlay):
                 print(" ", otherPoint)
                 nameShip = ""
                 
-    ######################
-    #Daniel
+    
+    
     elif(thisHit == 0):
         correct = True
         while(correct):
@@ -555,13 +548,12 @@ while(inPlay):
         status = input()
         if("HIT" in status):
             nameShip = status[5:]
-    ##################################
-    #Kathleen and Daniel
+    
     while (not "MISS"  == status and not"HIT, DESTROYER" == status and not "HIT, CRUISER" == status and not "HIT, SUBMARINE" == status and not "HIT, BATTLESHIP" == status and not "HIT, AIRCRAFT CARRIER" == status and not "HIT, SUNK DESTROYER" == status and not"HIT, SUNK CRUISER" == status and not"HIT, SUNK SUBMARINE" == status and not"HIT, SUNK BATTLESHIP" == status and not "HIT, SUNK AIRCRAFT CARRIER" == status):
         print("Not a valid input. Please re-enter: ")
         status = input()
-    ########################################
-    #Kathleen
+    
+    
     if(thisHit >= 2):
         
         if thisHit == 2:
@@ -583,7 +575,7 @@ while(inPlay):
                 check = [] 
                 direction = 0
                 originalPoint = ""
-                coordNum == 0
+                coordNum = 0
                 newPoint = ""
                 thisHit = 0
                 ifSunk = False
@@ -595,34 +587,34 @@ while(inPlay):
             check = [] 
             direction = 0
             originalPoint = ""
-            coordNum == 0
+            coordNum = 0
             newPoint = ""
             thisHit = 0
             ifSunk = False
             shipOther = True
     elif("SUNK" in status):
-        #Daniel
+        
         pygame.mixer.music.load("Explosion.mp3")
         pygame.mixer.music.set_volume(1)
         pygame.mixer.music.play()
-        ###############
+        
         shipNumO -= 1
         hitO+=1
         bowlean = True
         check = [] 
         direction = 0
         originalPoint = ""
-        coordNum == 0
+        coordNum = 0
         newPoint = ""
         thisHit = 0
         ifSunk = False
         shipOther = True
     elif("HIT" in status):
-        #Daniel
+        
         pygame.mixer.music.load("Explosion.mp3")
         pygame.mixer.music.set_volume(1)
         pygame.mixer.music.play()
-        ################
+        
         if(not otherShip):
             thisHit = thisHit + 1
             if (thisHit == 1):
@@ -633,14 +625,14 @@ while(inPlay):
         hitO +=1
 
     elif("MISS" in status):
-        #Daniel
+        
         pygame.mixer.music.load("Splash.mp3")
         pygame.mixer.music.set_volume(1)
         pygame.mixer.music.play()
-        ##################
+        
         missO +=1
     if(shipNumO == 0):
-        #Daniel
+        
         pygame.draw.rect(gameWindow, navyBlue, (625, 700, 700, 100), 0)
         hitCounterUser = infoFont.render("HITS BY OPPONENT: " + str(hitU), 1, red)
         missCounterUser = infoFont.render("MISSES BY OPPONENT: " + str(missU), 1, white)
@@ -655,12 +647,12 @@ while(inPlay):
         gameWindow.blit(opponentLost, (475, 400))
         pygame.display.update()
         pygame.event.get()
-        ##########################
+        
         break
     point = shotList[-1]
     printPoint(point, status, 1)
-    ##################################
-    #Daniel
+    
+    
     pygame.draw.rect(gameWindow, navyBlue, (0, 700, 625, 100), 0)
     hitCounterOpponent = infoFont.render("HITS BY USER: " + str(hitO), 1, red)
     missCounterOpponent = infoFont.render("MISSES BY USER: " + str(missO), 1, white)
@@ -673,17 +665,17 @@ while(inPlay):
     
     pygame.display.update()
     pygame.event.get()
-    ##############################
-    #Kathleen
+    
+    
     xy = Attack(myShip)
     x = xy[0]
     y = xy[1]
     if(myShip[x][y] == 0):
-        #Daniel
+        
         pygame.mixer.music.load("Splash.mp3")
         pygame.mixer.music.set_volume(1)
         pygame.mixer.music.play()
-        ####################
+        
         print("MISS")
         missU = missU + 1
         printPoint(chr(x+65)+str(y+1), "MISS", 2)
@@ -691,11 +683,10 @@ while(inPlay):
     else:
         z = myShip[x][y]
         if(z == 6 and not ifIn(myShip, duplicateShip[x][y])):
-            # Daniel
             pygame.mixer.music.load("Splash.mp3")
             pygame.mixer.music.set_volume(1)
             pygame.mixer.music.play()
-            ###################
+            
             print("MISS")
             printPoint(chr(x+65)+str(y+1), "MISS", 2)
             missU +=1
@@ -711,16 +702,16 @@ while(inPlay):
                 shipNumU -=1
             else:
                 print("HIT,",ship)
-            #Daniel
+            
             pygame.mixer.music.load("Explosion.mp3")
             pygame.mixer.music.set_volume(1)
             pygame.mixer.music.play()
-            #######################
+            
             printPoint(chr(x+65)+str(y+1), "HIT", 2)
             
     shotsU += 1
     if(hitU == 17):
-        #Daniel
+        
         pygame.draw.rect(gameWindow, navyBlue, (0, 700, 625, 100), 0)
         hitCounterOpponent = infoFont.render("HITS BY USER: " + str(hitO), 1, red)
         missCounterOpponent = infoFont.render("MISSES BY USER: " + str(missO), 1, white)
@@ -738,10 +729,10 @@ while(inPlay):
         gameWindow.blit(userLost, (500, 400))
         pygame.display.update()
         pygame.event.get()
-        ##################
+        
         break
-    ####################################
-    #Daniel
+    
+    
     pygame.draw.rect(gameWindow, navyBlue, (625, 700, 700, 100), 0)
     hitCounterUser = infoFont.render("HITS BY OPPONENT: " + str(hitU), 1, red)
     missCounterUser = infoFont.render("MISSES BY OPPONENT: " + str(missU), 1, white)
@@ -752,4 +743,4 @@ while(inPlay):
     gameWindow.blit(shotCounterUser, (960, 750))
     gameWindow.blit(shipCounterUser, (640, 750))
     pygame.display.update()
-    #############################
+    

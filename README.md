@@ -43,7 +43,7 @@ The guessing algorithm for this AI is pretty basic. It randomly chooses a point 
  - Once download is complete, extract the files from the ZIP file.
 
 # Dependencies
- - Python 3(3.1 at the very minimum)
+ - Python 3 (3.1 at the very minimum)
  - PyGame
 
 

@@ -47,5 +47,5 @@ The guessing algorithm for this AI is pretty basic. It randomly chooses a point 
  - [PyGame](https://www.pygame.org/wiki/GettingStarted)
 
 # Notes
- - Our class competed in a bracket to see whose AI was the most successful and I think we got 4th place.
+ - Our class competed in a bracket tournament to see whose AI was the best and I think we got 4th place.
  - Special thanks to Kathleen for carrying the team through this project :D

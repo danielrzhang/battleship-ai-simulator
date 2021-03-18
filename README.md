@@ -46,6 +46,6 @@ The guessing algorithm for this AI is pretty basic. It randomly chooses a point 
  - Python 3 (3.1 at the very minimum)
  - PyGame
 
-
-
-
+# Notes
+ - Our class competed in a bracket to see whose AI was the most successful. I think we got 4th place.
+ - Special thanks to Kathleen for carrying the team through this project :D

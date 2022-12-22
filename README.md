@@ -2,7 +2,7 @@
 This is an AI vs. AI battleship project that I created in ICS2O (Grade 10 Computer Science) using Python 3 and PyGame. It took a few weeks to develop, and this program implements the popular strategy game, Battleship, except this is an AI that plays it. 
 
 # How to Play
-For instructions on how to play, click [here](https://en.wikipedia.org/wiki/Battleship_(game)). This was meant to be played against another Python AI with a similar layout. The grids are displayed using GUI, and the messages of guessing coordinates and hitting or missing are displayed on the console.
+For instructions on how to play, click [here](https://en.wikipedia.org/wiki/Battleship_(game)). This was meant to be played against another Python AI with a similar layout. The grids are displayed using Pygame GUI, and the messages of guessing coordinates and hitting or missing are displayed on the console.
 
 Let’s assume that my AI is called A and the opponent AI is called B. The game begins when both AIs ask if A or B goes first (asking USER or OPPONENT). A and B take turns guessing where their opponent’s ships are, and stating whether the guess is a HIT or a MISS. You win if you sink all 5 of the opponent’s ships before they sink all of yours. An exemplar scenario for playing the game is shown below:
 

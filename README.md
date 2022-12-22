@@ -1,5 +1,5 @@
 # Battleship
-This is an AI vs. AI battleship project that I created with a partner in ICS2O (Grade 10 Computer Science) using Python 3 and PyGame. It took a few weeks to develop, and this program implements the popular strategy game, Battleship, except this is an AI that plays it. 
+This is an AI vs. AI battleship project that I created in ICS2O (Grade 10 Computer Science) using Python 3 and PyGame. It took a few weeks to develop, and this program implements the popular strategy game, Battleship, except this is an AI that plays it. 
 
 # How to Play
 For instructions on how to play, click [here](https://en.wikipedia.org/wiki/Battleship_(game)). This was meant to be played against another Python AI with a similar layout. The grids are displayed using GUI, and the messages of guessing coordinates and hitting or missing are displayed on the console.
@@ -45,7 +45,3 @@ The guessing algorithm for this AI is pretty basic. It randomly chooses a point 
 # Dependencies
  - [Python 3](https://www.python.org/downloads/) (3.6 at the very minimum)
  - [PyGame](https://www.pygame.org/wiki/GettingStarted)
-
-# Notes
- - Our class competed in a bracket tournament to see whose AI was the best and I think we got 4th place.
- - Special thanks to Kathleen for carrying the team through this project :D

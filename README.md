@@ -1,31 +1,31 @@
-# Battleship
-This is an AI vs. AI battleship project that I created in ICS2O (Grade 10 Computer Science) using Python 3 and PyGame. It took a few weeks to develop, and this program implements the popular strategy game, Battleship, except this is an AI that plays it. 
+# Battleship AI Simulator
+This project presents an AI vs. AI Battleship simulation, using a combination of Python 3 and PyGame. The implementation showcases the popular strategy game, Battleship.
 
-# How to Play
-For instructions on how to play, click [here](https://en.wikipedia.org/wiki/Battleship_(game)). This was meant to be played against another Python AI with a similar layout. The grids are displayed using Pygame GUI, and the messages of guessing coordinates and hitting or missing are displayed on the console.
+# How to Use
+For comprehensive instructions on gameplay, please refer to the following [link](https://en.wikipedia.org/wiki/Battleship_(game)). THe design of this simulation assumes it to be played against another Python AI employing a similar framework. The grids are rendered using the PyGame GUI, while the console efficiently handles the coordination of guesses and outcome notifications.
 
-Let’s assume that my AI is called A and the opponent AI is called B. The game begins when both AIs ask if A or B goes first (asking USER or OPPONENT). A and B take turns guessing where their opponent’s ships are, and stating whether the guess is a HIT or a MISS. You win if you sink all 5 of the opponent’s ships before they sink all of yours. An exemplar scenario for playing the game is shown below:
+Allow us to establish the framework for this simulation. Designate one AI as "A" and the opposing AI as "B." The game commences once both AIs request to know whether A or B will take the first turn (USER or OPPONENT). Subsequently, A and B alternate turns, strategically guessing the location of their adversary's ships and promptly declaring whether the guess results in a HIT or a MISS. The objective is to sink all five of the opponent's ships before they can successfully sink A's fleet. A scenario outlining the gameplay is presented below:
 
 # Scenario
- - Assume A goes first
- - User manning A inputs USER
- - User manning B inputs OPPONENT
- - A displays a coordinate guess on the console (ex: A9)
- - User manning B inputs the guess, A9, in their console
- - B stores that information determines if there is a HIT or a MISS, and displays it on the grid. Then, they display the result to their console (assume it was a MISS)
- - User manning A inputs the result, MISS, in their console
- - A stores that information, and displays it to their grid.
- - It is now B’s turn. B displays a coordinate guess on their console (ex: J1)
- - User manning A inputs the guess, J1, in their console
- - A stores that information determines if there is a HIT or a MISS, and displays it on the grid. Then, they display the result to their console (assume it was a HIT,      AIRCRAFT CARRIER)
- - User manning B inputs the result, HIT, AIRCRAFT CARRIER, in their console
- - B stores that information, and displays it to their grid.
- - Repeat
+ - Assume A is assigned the first turn.
+ - The AI managing A inputs "USER."
+ - The AI managing B inputs "OPPONENT."
+ - A displays a coordinate guess on the console (e.g., A9).
+ - The AI managing B inputs the guess (A9) in their console.
+ - B processes the information, determines if it constitutes a HIT or a MISS, updates the grid accordingly, and displays the outcome on their console (assuming it was a MISS).
+ - The AI managing A inputs the result, "MISS," into their console.
+ - A processes the information, updates the grid, and displays the outcome.
+ - It is now B's turn. B displays a coordinate guess on their console (e.g., J1).
+ - The AI managing A inputs the guess (J1) in their console.
+ - A processes the information, determines if it constitutes a HIT or a MISS, updates the grid, and displays the outcome on their console (assuming it was a HIT, targeting the "AIRCRAFT CARRIER").
+ - The AI managing B inputs the result, "HIT, AIRCRAFT CARRIER," into their console.
+ - B processes the information, updates the grid, and displays the outcome.
+ - Repeat the previous steps as the game progresses.
 
-The game records the number of hits, misses, total shots, and ships remaining for the user and opponent. In the GUI window, your ships are on the left, while your opponent’s grid is on the right. The ships are randomly generated every round. 
+This simulation records the number of hits, misses, total shots, and remaining ships for both the user and the opponent. In the GUI window, the user's ships are showcased on the left, while the opponent's grid is displayed on the right. Each round, the ships are randomly generated, ensuring an engaging and unpredictable experience. 
 
 # Battleship Guessing Algorithm
-The guessing algorithm for this AI is pretty basic. It randomly chooses a point on the grid at the beginning of the round, and guesses at every other spot on the grid, moving horizontally. Once it finishes a row, it moves down to the next row. If it reaches the bottom of the grid, it starts back at the top, and continues with every other spot horizontally.
+The AI's guessing algorithm in this simulation adopts a straightforward approach. At the start of each round, it randomly selects a point on the grid and begins guessing at every other spot, moving horizontally. Once it completes a row, it shifts down to the next row. Should it reach the bottom of the grid, it resumes at the top, continuing the horizontal pattern until all spots have been attempted.
 
 # Ships
  - AIRCRAFT CARRIER: 5
@@ -35,7 +35,7 @@ The guessing algorithm for this AI is pretty basic. It randomly chooses a point 
  - DESTROYER: 2
 
 # Editor
- - Coded with IDLE
+This project has been coded using the IDLE Integrated Development Environment.
 
 # Download
  - Click on the green download button labelled “Code”.
@@ -43,5 +43,7 @@ The guessing algorithm for this AI is pretty basic. It randomly chooses a point 
  - Once download is complete, extract the files from the ZIP file.
 
 # Dependencies
+To run this simulation, ensure that you have the following dependencies:
+
  - [Python 3](https://www.python.org/downloads/) (3.6+)
  - [PyGame](https://www.pygame.org/wiki/GettingStarted)

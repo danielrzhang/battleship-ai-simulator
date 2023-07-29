@@ -18,9 +18,6 @@ Battleship AI Simulator is designed to be played against another Battleship AI f
 
     `python Battleship.py`
 
-# License
-Battleship AI Simulator is licensed under the GNU General Public License v3.0.
-
 # How to Use
 For comprehensive instructions on gameplay, please refer to the following [link](https://en.wikipedia.org/wiki/Battleship_(game)). The design of this simulation assumes it to be played against another Python AI employing a similar framework. The grids are rendered using the Pygame GUI, while the console efficiently handles the coordination of guesses and outcome notifications.
 
@@ -53,3 +50,6 @@ The AI's guessing algorithm in this simulation is straightforward. At the start 
  - CRUISER: 3
  - SUBMARINE: 3
  - DESTROYER: 2
+
+ # License
+Battleship AI Simulator is licensed under the GNU General Public License v3.0.
